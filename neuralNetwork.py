@@ -1,12 +1,15 @@
+# Importing Necessary Libraries
 import tensorflow as tf
 from tensorflow import keras
 import matplotlib.pyplot as plt
 
+# Model determination
 model = keras.Sequential([
     keras.layers.Dense(4, input_shape=(3,), activation='relu'),
     keras.layers.Dense(2, activation='softmax')
 ])
 model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
+
 # input data
 X_train = [[0, 0, 0], [0, 0, 1], [1, 0, 0]]
 # output data
